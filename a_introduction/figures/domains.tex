@@ -42,9 +42,10 @@
 %        \node at (axis cs:pi, -1.2) [anchor=west] {\scriptsize $A =$ amplitude };
 %        \node at (axis cs:pi, -1.4) [anchor=west] {\scriptsize $\omega_0 =$ frequency (here $\omega_0 =1$) };
 %        \node at (axis cs:pi, -1.6) [anchor=west] {\scriptsize $\phi =$ phase (here $\phi =-\pi/4$) };
+        \node at (axis cs:0.5, -2.6) {Time domain representation.};
     \end{axis}
-
-   \begin{scope}
+    
+   %\begin{scope}
        \begin{axis}
 [%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     scale=0.8,
@@ -60,13 +61,15 @@
     xlabel={$\omega$},
     ylabel={$X(j\omega)/\pi$},
     ytick={0, 0.5,  1, 1.5},
-    ymin=-1.25,
+    ymin=-1.5,
     ymax=1.75,
     xshift=8cm,
+    clip=false,
 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addplot+[ycomb,EntcBlue, mark=triangle*,mark options={rotate=180}] table [x={n}, y={xn}] {\subfolder/data.dat};
+        \node at (axis cs:0.5, -1.75) {Frequency domain representation.};
 \end{axis}
-\end{scope}
+%\end{scope}
 
 
 

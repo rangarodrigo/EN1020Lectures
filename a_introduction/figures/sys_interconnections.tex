@@ -1,8 +1,9 @@
 \tikzset{%
-  block/.style    = {draw, rectangle, minimum height = 2em, minimum width = 4em, fill=red!20},
-  sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+  block/.style    = {rectangle,draw=EntcMaroonDef,thick, fill=EntcBaigeDef, minimum height = 2em, minimum width = 4em, rounded corners=.8ex},
+  sum/.style      = {draw, circle, ,draw=EntcMaroonDef,thick, node distance = 2cm}, % Adder
   io/.style    = {coordinate}, %input-output
-    junction/.style    = {coordinate}
+    junction/.style    = {coordinate},
+  connector/.style = {draw=EntcMaroonDef,thick}
 }
 % Defining string as labels of certain blocks.
 \newcommand{\suma}{\Large$+$}
@@ -17,10 +18,10 @@
 		\node (b2) [right of=b1, block] {};
 		\node (output) [right of=b2, io] {};
 		
-		\draw[->](input) --  (b1);
-		\draw[->](b1) --  (b2);
-		\draw[->](b1) --  (b2); 	
-		\draw[->](b2) --  (output);
+		\draw[-latex, connector](input) --  (b1);
+		\draw[-latex, connector](b1) --  (b2);
+		\draw[-latex, connector](b1) --  (b2); 	
+		\draw[-latex, connector](b2) --  (output);
 		
 		\node at (4, -1.1) {Series (Cascade)};		
 	\end{scope}	
@@ -35,11 +36,11 @@
 		
 		
 		\draw[] (input) --  (j1);		
-		\draw[->] (j1) |-  (b1);	
-		\draw[->] (j1) |-  (b2);	
-		\draw[->] (b1) -|  (s1);	
-		\draw[->] (b2) -|  (s1);
-		\draw[->] (s1) --  (output);		
+		\draw[-latex, connector] (j1) |-  (b1);	
+		\draw[-latex, connector] (j1) |-  (b2);	
+		\draw[-latex, connector] (b1) -|  (s1);	
+		\draw[-latex, connector] (b2) -|  (s1);
+		\draw[-latex, connector] (s1) --  (output);		
 		\node at (4, -1.75) {Parallel};			
 	\end{scope}
 	
@@ -54,13 +55,13 @@
 
 		
 		
-		\draw[->] (input) --  (s2);		
-		\draw[->] (s2) --  (b3);	
-		\draw[] (b3) --  (j2);
+		\draw[-latex, connector] (input) --  (s2);		
+		\draw[-latex, connector] (s2) --  (b3);	
+		\draw[connector] (b3) --  (j2);
 		
-		\draw[->] (j2) --  (output);	
-		\draw[->] (j2) |- (b4);		
-		\draw[->] (b4) -| (s2);
+		\draw[-latex, connector] (j2) --  (output);	
+		\draw[-latex, connector] (j2) |- (b4);		
+		\draw[-latex, connector] (b4) -| (s2);
 		\node at (4, -2) {Feedback};			
 	\end{scope}	
 \end{tikzpicture} 
