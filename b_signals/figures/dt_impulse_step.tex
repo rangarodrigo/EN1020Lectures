@@ -25,7 +25,7 @@
         x label style={at={(current axis.right of origin)},anchor=west},
         y label style={at={(current axis.above origin)}, anchor=south},
 	]
-	\addplot+[ycomb,domain=-10:10, blue, mark size=1pt ] {unitstep(x)};
+	\addplot+[ycomb,domain=-10:10, EntcMaroonDef, mark size=1pt ] {unitstep(x)};
 \end{axis}
 
 \pause
@@ -52,7 +52,7 @@
         x label style={at={(current axis.right of origin)},anchor=west},
         y label style={at={(current axis.above origin)}, anchor=south},
 	]
-	\addplot+[ycomb,domain=-10:10, blue, mark size=1pt] {unitstepd(x,1)};
+	\addplot+[ycomb,domain=-10:10, EntcBlue, mark size=1pt] {unitstepd(x,1)};
 	\end{axis}
 %\end{scope}
 %
@@ -80,6 +80,6 @@
         x label style={at={(current axis.right of origin)},anchor=west},
         y label style={at={(current axis.above origin)}, anchor=south},
 	]
-	\addplot+[ycomb,domain=-10:10, blue, mark size=1pt] {impulse(x, 0)};
+	\addplot+[ycomb,domain=-10:10, EntcBlue, mark size=1pt] {impulse(x, 0)};
 	\end{axis}
 \end{tikzpicture} 

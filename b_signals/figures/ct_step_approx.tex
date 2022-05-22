@@ -24,7 +24,7 @@
         x label style={at={(current axis.right of origin)},anchor=west},
         y label style={at={(current axis.above origin)}, anchor=south},
 	 ]
-	 \addplot[domain=-5:5,samples=200,red]{func(x)};
+	 \addplot[domain=-5:5,samples=200,EntcMaroonDef]{func(x)};
 
 	\draw[dashed] (axis cs:1, 1) -- (1,0) node [anchor=north] {$\Delta$};
 	\node at (axis cs:6, 0.5) [anchor=west] {$u_\Delta(t) \rightarrow u(t) \text{ as } \Delta \rightarrow 0. $};
@@ -48,12 +48,12 @@
         x label style={at={(current axis.right of origin)},anchor=west},
         y label style={at={(current axis.above origin)}, anchor=south},
 	 ]
-	 \addplot[domain=-5:5,samples=200,red]{func1(x)};
+	 \addplot[domain=-5:5,samples=200,EntcRed]{func1(x)};
 
 	\path (1,0) node [anchor=north] {$\Delta$};
 	\node at (axis cs:6, 0.5) [anchor=west] {$\delta_\Delta(t) \rightarrow \delta(t) \text{ as } \Delta \rightarrow 0. $};
 	\node at (axis cs:6, 0.3) [anchor=west] {area = 1};	
-	\draw [draw=none, pattern=north west lines, pattern color=red!80!blue!30] (axis cs:0,0) rectangle (1, 1);
+	\draw [draw=none, pattern=north west lines, pattern color=EntcSlate] (axis cs:0,0) rectangle (1, 1);
 \end{axis}
 \pause
 \begin{axis}[
@@ -74,7 +74,7 @@
         y label style={at={(current axis.above origin)}, anchor=south},
 	 ]
 
-	\draw[-latex, red, thick] (axis cs:0,0) -- (axis cs:0,1);
+	\draw[-latex, EntcMaroonDef, thick] (axis cs:0,0) -- (axis cs:0,1);
 	\node at (axis cs:6, 0.5) [anchor=west] {height = $\infty$, width = 0, area = 1};
 
 \end{axis}

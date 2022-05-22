@@ -22,7 +22,7 @@
         \end{column}
         \pause
         \begin{column}{0.5\textwidth}
-            The relationship between these two representations can be determined from \alert{Euler's relation}:
+            \noindent The relationship between these two representations can be determined from \alert{Euler's relation}:
             \begin{equation*}
                 e^{j\theta} = \cos\theta + j\sin\theta
             \end{equation*}
@@ -62,19 +62,19 @@
             \begin{equation*}
                 z_1 = r_0e^{-j\theta} = r_0(\cos(-\theta_0) + j\sin(-\theta_0)) = x_0 - jy_0.
             \end{equation*}
-            \onslide<2->
+            \onslide<2-|handout:0>
             \begin{equation*}
                 z_2 = r_0 = \sqrt{x_0^2+y_0^2}
             \end{equation*}
-            \onslide<3->
+            \onslide<3-|handout:0>
             \begin{align*}
                 z_3 &= r_0e^{j(\theta_0 + \pi)}\\&= r_0(\cos(\theta_0 + \pi) + \sin(\theta_0 + \pi)) = -x_0 - jy_0 = -z_0.
             \end{align*}
-            \onslide<4->
+            \onslide<4-|handout:0>
             \begin{equation*}
                 z_4 = -x_0 + jy_0.
             \end{equation*}
-            \onslide<5->
+            \onslide<5-|handout:0>
             \begin{equation*}
                 z_5 = z_0.
             \end{equation*}
@@ -128,7 +128,7 @@
 \begin{frame}
     \begin{columns}[T]
         \begin{column}{0.3\textwidth}
-            Express each of the following complex numbers in polar form, and plot them in the complex plane, indicating the magnitude and angle of each number.
+            {\bf Example} Express each of the following complex numbers in polar form, and plot them in the complex plane, indicating the magnitude and angle of each number.
             \begin{enumerate}[<alert@+>]
                 \item $1 + j\sqrt{3}$
                 \item $-5$
@@ -151,10 +151,10 @@
                 \begin{tikzpicture}
                 	\draw (-2,0) -- (2,0) node [anchor=west] {$\mathfrak{Re}$};
                 	\draw (0,-2) -- (0,2) node [anchor=south] {$\mathfrak{Im}$};
-                    \draw[red!50!black, thick] (0,0) -- (60:1.5) node[midway, above] {$2$} node[anchor=west] {$1 + j\sqrt{3}$};
+                    \draw[red!50!black, thick] (0,0) -- (60:1.5) node[midway, above, yshift=0.1cm] {$2$} node[anchor=west] {$1 + j\sqrt{3}$};
                     \draw[draw=green!20!black, -latex] (0.5, 0) arc (0:60:0.5) node [near start, anchor=south west] {$\pi/3$};
                 \end{tikzpicture}
-        \onslide<2>
+        \onslide<2|handout:0>
                 \begin{align*}
                   -5 &= 5(-1 + j0) \\
                    &= 5e^{j\mathrm{atan2}(0, -1)} \\
@@ -168,7 +168,7 @@
                     \draw[draw=green!20!black, -latex] (0.5, 0) arc (0:180:0.5) node [near start, anchor=south west] {$\pi$};
                 \end{tikzpicture}
 
-        \onslide<3>
+        \onslide<3|handout:0>
                 \begin{align*}
                   -5 -5j &= 5(-1 + j(-1)) \\
                    &= 5e^{j\mathrm{atan2}(-1, -1)} \\
@@ -181,7 +181,7 @@
                     \draw[red!50!black, thick] (0,0) -- (-135:1.5) node[midway, above, xshift=-0.2cm] {$5\sqrt{2}$} node[anchor=north] {$-5-j5$};
                     \draw[draw=green!20!black, -latex] (0.5, 0) arc (0:-135:0.5) node [midway, anchor=north west] {$-3\pi/4$};
                 \end{tikzpicture}
-        \onslide<4>
+        \onslide<4|handout:0>
                 \begin{align*}
                   3 +4j &= 5(3/5 + j4/5) \\
                    &= 5e^{j\mathrm{atan2}(4, 3)} \\
@@ -194,7 +194,7 @@
                     \draw[red!50!black, thick] (0,0) -- (53.1:1.5) node[midway, above, xshift=-0.2cm] {$5$} node[anchor=south] {$3+4j$};
                     \draw[draw=green!20!black, -latex] (0.5, 0) arc (0:53.1:0.5) node [midway, anchor= west] {$53.1^\circ$};
                 \end{tikzpicture}
-        \onslide<5>
+        \onslide<5|handout:0>
                 \begin{align*}
                   (1-j\sqrt{3})^3 &= \left(2e^{-j\pi/3}\right)^3 \\
                    &= 8e^{-j\pi} \\
@@ -272,7 +272,7 @@
     \pause
     List the values of
     \begin{overprint}
-        \onslide<3>
+        \onslide<3|handout:0>
         \begin{enumerate}
           \item $e^{j0}$
           \item $e^{j\pi/2}$
@@ -280,7 +280,7 @@
           \item $e^{j3\pi/2}$
           \item $e^{j2\pi}$
         \end{enumerate}
-        \onslide<4>
+        \onslide<4|handout:0>
         \begin{enumerate}
           \item $e^{j0} = 1$
           \item $e^{j\pi/2} = j$

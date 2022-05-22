@@ -118,7 +118,7 @@
             }
             \column{0.4\textwidth}
             {
-                This signal is \alert{even}. If we mirror an even signal about the time origin, it would look exactly the same.\\[12pt]
+                \noindent This signal is \alert{even}. If we mirror an even signal about the time origin, it would look exactly the same.\\[12pt]
                 Periodic: $x(t) = x(t+ T)$.\\
                 Even: $x(t) = x(-t)$.
             }
@@ -137,7 +137,7 @@
             }
             \column{0.4\textwidth}
             {
-                This signal is \alert{odd}. If we flip an odd signal about the time origin, we also multiply it by a ($-$) sign to get the original signal.\\[12pt]
+                \noindent This signal is \alert{odd}. If we flip an odd signal about the time origin, we also multiply it by a ($-$) sign to get the original signal.\\[12pt]
                 Periodic: $x(t) = x(t+ T)$.\\
                 Odd: $x(t) = -x(-t)$.
             }
@@ -158,7 +158,7 @@
             }
             \column{0.4\textwidth}
             {
-                The independent variable is an integer.\\
+                \noindent The independent variable is an integer.\\
                 The sequence takes values only at integer values of the argument.\\
                 This signal is \alert{even}. \\[12pt]
                 Even: $x[n] = x[-n]$.\\
@@ -247,14 +247,14 @@
 \begin{frame}{Periodicity of a DT Signal Cntd.}
     \centering
     \input{figures/dt_sinusoid_n_12_phi_0}
-    %
+    \vspace{0.1in}
     \input{figures/dt_sinusoid_n_6_phi_0}
-    %
+    \vspace{0.1in}
     \input{figures/dt_sinusoid_n_831_phi_0}
-    %
+    \vspace{0.1in}
     \input{figures/dt_sinusoid_n_115_phi_0}
 \end{frame}
-
+%
 \subsection{Exponentials}
 
 \begin{frame}[plain]{CT Real Exponentials}
@@ -290,7 +290,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-    \mode<beamer>
+    %\mode<beamer>
     {
         {
             \centering
@@ -299,8 +299,15 @@
     }
 \end{frame}
 
+\mode<beamer>
+{
+    %\import{b_signals/}{complex_numbers}
+}
+\mode<handout>
+{
 
-\import{b_signals/}{complex_numbers}
+    \input{b_signals/complex_numbers}
+}
 
 \section{Complex Signals}
 \subsection{CT Complex Exponentials}
@@ -682,7 +689,7 @@
                     &= \frac{-1}{2a}\left[e^{-at}\right]_0^\infty = \frac{-1}{2a}[0 -1] = \frac{1}{2a}\\
                 \end{align*}
                 This is an energy signal.
-                \onslide<2>
+                \onslide<2|handout:0>
                 \begin{align*}
                     x(t) &= A\cos(\omega_0t+\theta)\\
                     E_\infty &=  \lim_{T\rightarrow \infty}\int_{-T}^{T}|x(t)|^2dt\\
@@ -690,7 +697,7 @@
                     &= \frac{A^2}{2}\lim_{T\rightarrow \infty}\int_{-T}^{T}[1+ \cos(2\omega_0t+2\theta)]dt\\
                     &= \frac{A^2}{2}\lim_{T\rightarrow \infty}\left[t - \frac{\cos(2\omega_0t+2\theta)}{2\omega_0}\right]_{-T}^{T}\\
                 \end{align*}
-                \onslide<3>
+                \onslide<3|handout:0>
                 \begin{align*}
                     x(t) &= tu(t)\\
                     E_\infty &=  \lim_{T\rightarrow \infty}\int_{-T}^{T}|x(t)|^2dt\\
@@ -703,7 +710,7 @@
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{overprint}
-                \onslide<2>
+                \onslide<2|handout:0>
                 Considering $T$ as an integer multiple of $2\pi/\omega_0$
                 \begin{align*}
                     E_\infty &= A^2\lim_{T\rightarrow \infty}T \rightarrow \infty.
@@ -714,7 +721,7 @@
                     &= A^2\lim_{T\rightarrow \infty}\frac{1}{2T}T  = \frac{A^2}{2} < \infty\\
                 \end{align*}
                 This is a power signal.
-                \onslide<3>
+                \onslide<3|handout:0>
                 \begin{align*}
                     x(t) &= tu(t)\\
                     P_\infty &=  \lim_{T\rightarrow \infty}\frac{1}{2T}\int_{-T}^{T}|x(t)|^2dt\\

@@ -21,7 +21,7 @@
         x label style={at={(current axis.right of origin)},anchor=west},
         y label style={at={(current axis.above origin)}, anchor=south},
      ]
-      \addplot[domain=-pi:3*pi,samples=200,red]{cos(deg(x) + \phase)};
+      \addplot[domain=-pi:3*pi,samples=200,EntcMaroonDef, thick]{cos(deg(x) + \phase)};
 
 
        \draw[|-|] (axis cs: 0,1.1) -- (axis cs: 2*pi,1.1) node[midway, above] {\scriptsize $T_0=\frac{2\pi}{\omega_0}$};
