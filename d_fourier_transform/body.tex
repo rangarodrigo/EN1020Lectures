@@ -13,6 +13,7 @@
             \item Discrete-time Fourier transform
         \end{enumerate}
       \item In this part of the course, we will concentrate on how to actually compute continuous-time Fourier series and transform. Later, after we study liner, time-invariant (LTI) systems, we will study the conceptual aspects of Fourier techniques.
+      \item In EN2063, we will do a more rigorous study of Fourier techniques.
     \end{itemize}
 \end{frame}
 
@@ -20,7 +21,7 @@
     \begin{itemize}[<+->]
           \item In the last lecture, we represented a periodic signal as a linear combination of complex exponentials.
           \item We use Fourier transform to represent aperiodic signals. A larger class of signals, including all signals with finite energy, can be represented through a linear combination of complex exponentials.
-          \item Whereas for periodic signals the complex exponential building blocks are harmonically related, for aperiodic signals they are infinitesimally close in frequency, and the representation in terms of a linear combination takes the form of an integral rather than a sum.
+          \item Whereas for periodic signals the complex exponential building blocks are harmonically related, for aperiodic signals they are \alert{infinitesimally close in frequency}, and the representation in terms of a linear combination takes the form of an integral rather than a sum.
           \item The resulting spectrum of coefficients in this representation is called the \alert{Fourier transform}.
           \item The synthesis integral itself, which uses the Fourier transform to represent the signal as a linear combination (integral) of complex exponentials, is called the \alert{inverse Fourier transform}.
       \end{itemize}
@@ -55,7 +56,7 @@
     \begin{equation}\label{eq:square_fs}
         a_k = \frac{2\sin(k\omega_0T_1)}{k\omega_0T}
     \end{equation}
-    We plotted this for a fixed value of $T_1$ and several values of $T$ (shown in the next slide). An alternative wave of interpreting eq. \ref{eq:square_fs} is as samples of an envelope function:
+    We plotted this for a fixed value of $T_1$ and several values of $T$ (shown in the next slide). An alternative wave of interpreting Eq. \ref{eq:square_fs} is as samples of an envelope function:
     \begin{equation*}
         Ta_k = \left.\frac{2\sin(\omega T_1)}{\omega}\right|_{\omega=k\omega_0}
     \end{equation*}
@@ -80,7 +81,7 @@
         \column{0.2\textwidth}
         {
             \small
-            \noindent Plots of scaled Fourier series coefficients $a_k$ for the periodic square wave with $T_1$ fixed and for several values of $T$: $T=4T_1$, $T=8T_1$, $T=16T_1$.
+            \noindent~Plots of scaled Fourier series coefficients $a_k$ for the periodic square wave with $T_1$ fixed and for several values of $T$: $T=4T_1$, $T=8T_1$, $T=16T_1$.
 
         }
     \end{columns}
@@ -93,14 +94,14 @@
         {
         \begin{figure}
           \centering
-          \input{figures/periodic_square_fs_samples_of_envilope}
+          \input{figures/periodic_square_fs_samples_of_envelope}
           \caption{Fourier series coefficients and their envelope for periodic square wave.}\label{fi:periodic_square_fs_samples_of_envilope}
         \end{figure}
         }
         \column{0.2\textwidth}
         {
             \small
-            \noindent The Fourier series coefficients and their envelope for periodic square wave for several values of $T$ (with $T_1$ fixed): $T=4T_1$, $T=8T_1$, $T=16T_1$. The coefficients are regularly-spaced samples of the envelope $(2\sin \omega T_1)/\omega$, where the spacing between samples, $2\pi/T$, decreases as $T$ increases.
+            \noindent~The Fourier series coefficients and their envelope for periodic square wave for several values of $T$ (with $T_1$ fixed): $T=4T_1$, $T=8T_1$, $T=16T_1$. The coefficients are regularly-spaced samples of the envelope $(2\sin \omega T_1)/\omega$, where the spacing between samples, $2\pi/T$, decreases as $T$ increases.
         }
     \end{columns}
 \end{frame}
@@ -155,7 +156,7 @@
     As $T\rightarrow \infty$, $\tilde{x}(t)$ approaches $x(t)$, and consequently, Eq.~\ref{eq:xtildet_with_ft} becomes a representation of $x(t)$. Furthermore, as $\omega_0 \rightarrow 0$ as $T \rightarrow \infty$, and the right-hand side of  Eq.~\ref{eq:xtildet_with_ft} passes to an integral. As $\omega_0 \rightarrow 0$, the summation converges to the integral of $X(j\omega)e^{j\omega t}$.
 
     \begin{tikzpicture}[remember picture,overlay]
-        \node[draw=blue!50, fill=blue!10, inner sep=2pt,outer sep=2pt, rounded corners=0.1cm, anchor=north east, yshift=0cm, xshift=-1cm, text width=5cm]  at (current page.north east) {
+        \node[draw=EntcBlue!50, fill=EntcBlue!10, inner sep=2pt,outer sep=2pt, rounded corners=0.1cm, anchor=north east, yshift=0cm, xshift=-1cm, text width=5cm]  at (current page.north east) {
             \begin{equation*}
                 \tilde{x}(t) = \frac{1}{2\pi}\sum_{k=-\infty}^{\infty} X(jk\omega_0)e^{jk\omega_0 t}\omega_0.
             \end{equation*}
@@ -188,7 +189,7 @@
     The transform $X(j\omega)$ of an aperiodic signal $x(t)$ is referred to as the spectrum of $x(t)$.
 }
 \begin{tikzpicture}[remember picture,overlay]
-    \node[draw=blue!50, fill=blue!10, inner sep=2pt,outer sep=2pt, rounded corners=0.1cm, anchor=south east, yshift=0cm, xshift=-1cm, text width=5cm]  at (current page.south east) {
+    \node[draw=EntcBlue!50, fill=EntcBlue!10, inner sep=2pt,outer sep=2pt, rounded corners=0.1cm, anchor=south east, yshift=0cm, xshift=-1cm, text width=5cm]  at (current page.south east) {
         FS synthesis and analysis equations:
         \begin{equation*}
             \begin{aligned}
@@ -211,7 +212,7 @@
 }
 
 \begin{tikzpicture}[remember picture,overlay]
-    \node[draw=blue!50, fill=blue!10, inner sep=2pt,outer sep=2pt, rounded corners=0.1cm, anchor=south east, yshift=0cm, xshift=-1cm, text width=5cm]  at (current page.south east) {
+    \node[draw=EntcBlue!50, fill=EntcBlue!10, inner sep=2pt,outer sep=2pt, rounded corners=0.1cm, anchor=south east, yshift=0cm, xshift=-1cm, text width=5cm]  at (current page.south east) {
         FS synthesis and analysis equations:
         \begin{equation*}
             \begin{aligned}
