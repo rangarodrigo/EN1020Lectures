@@ -79,13 +79,16 @@
             \begin{equation*}
                 y[n] = x[n].
             \end{equation*}
+            \begin{equation*}
+                \text{Squarer:}\quad y(t) = x^2(t).
+            \end{equation*}
         \column{0.48\textwidth}
             \textbf{Examples of systems with memory}\par
             Accumulator or summer:
             \begin{equation*}
                 y[n] = \sum_{k=-\infty}^{n}x[k].
             \end{equation*}
-            Delay:
+            Unit delay:
             \begin{equation*}
                 y[n] = x[n-1].
             \end{equation*}
@@ -98,7 +101,7 @@
     \mode<beamer>
     {
         \begin{tikzpicture}[remember picture,overlay]
-            \node[anchor=east, yshift=-0.2in, fill=orange, opacity=.8,text opacity=1] at (current page.east)
+            \node[anchor=east, yshift=-0.2in,  rounded corners=2pt, fill=blue!10!white, opacity=.5,text opacity=1] at (current page.east)
             {$y[n] = \sum_{k=-\infty}^{n-1}x[k] + x[n], \quad y[n] = y[n-1] + x[n]$};
         \end{tikzpicture}
     }
@@ -112,14 +115,14 @@
     \mode<beamer>
     {
         \centering
-        \begin{tikzpicture}[node distance=4cm]
+        \begin{tikzpicture}[node distance=4cm, block/.style = {rounded corners=2pt, thin, draw=EntcBlue, align=center, text width=3cm, fill=blue!10!white}]
             \node (a) at (0,0) {$x[n]$};
-            \node (b) [right= 1cm of a, thick, draw=Brown, fill=BurlyWood] {System};
-            \node (c) [right= 1cm of b, thick, draw=Brown, fill=BurlyWood, text width=2cm, text centered] {Inverse system};
+            \node (b) [right= 1cm of a, thin, block] {System};
+            \node (c) [right= 1cm of b, thin,  block] {Inverse system};
             \node (d) [right= 1cm of c] {$w[n] = x[n]$};
-            \draw[-latex, thick, Brown] (a) -- (b);
-            \draw[-latex, thick, Brown, text=black] (b) -- (c) node[midway, above] {$y[n]$};
-            \draw[-latex, thick, Brown] (c) -- (d);
+            \draw[-latex, thin, EntcBlue] (a) -- (b);
+            \draw[-latex, thin, EntcBlue, text=black] (b) -- (c) node[midway, above] {$y[n]$};
+            \draw[-latex, thin, EntcBlue] (c) -- (d);
         \end{tikzpicture}
     }
     \mode<handout>
@@ -128,7 +131,7 @@
     }
     \begin{columns}
         \column{0.48\textwidth}
-        \textbf{ Examples of invertible systems:}\par
+        \noindent\textbf{Examples of invertible systems:}\par
         If
         $
             y(t) = 2x(t),
@@ -146,8 +149,17 @@
         \begin{equation*}
             w[n] = y[n] - y[n-1].
         \end{equation*}
+        \pause
         \column{0.48\textwidth}
-        \textbf{ Examples of non-invertible systems:}\par
+        \noindent\textbf{More examples of non-invertible systems:}\par
+        Differentiator is the inverse of the integrator.
+        \begin{equation*}
+            \text{Integrator: } y_1(t) = \int_{-\infty}^{t}x_1(\tau)d\tau
+        \end{equation*}
+        \begin{equation*}
+            \text{Differentiator: } y_2(t) = \frac{dx_2(t)}{dt}
+        \end{equation*}
+        \noindent\textbf{Examples of non-invertible systems:}\par
         \begin{equation*}
             y[n] = 0.
         \end{equation*}
@@ -178,7 +190,13 @@
             \end{equation*}
             If inputs are identical until $t_0$, the outputs are identical until $t_0$. Same for DT.
         \column{0.48\textwidth}
-        \textbf{ Example}
+        \noindent\textbf{ Example}
+        \begin{equation*}
+            y[n] = \frac{1}{3}\left[x[n-1]+x[n] + x[n+1]\right]:\:\text{not causal.}
+        \end{equation*}
+        \begin{equation*}
+            y[n] = \frac{1}{3}\left[x[n-2]+x[n-1] + x[n]\right]:\:\text{causal.}
+        \end{equation*}        
     \end{columns}
 \end{frame}
 
@@ -189,7 +207,7 @@
     {
         \begin{columns}
             \column{0.48\textwidth}
-            \textbf{ Example}\par
+            \noindent\textbf{ Example}\par
             \begin{equation*}
                 y(t) = \int_{-\infty}^{t}x(\tau)d\tau
             \end{equation*}
@@ -197,6 +215,8 @@
             \column{0.48\textwidth}
         \end{columns}
     }
+    \pause
+    We can (carefully) use feedback to stabilize systems. 
 \end{frame}
 
 \begin{frame}{Time Invariance}
@@ -204,7 +224,7 @@
     \mode<beamer>
     {
         \begin{columns}
-            \column{0.48\textwidth}
+            \column{0.38\textwidth}
             If
             \begin{equation*}
                 x(t) \rightarrow y(t),
@@ -223,17 +243,25 @@
                 x[n - n_0] \rightarrow y[n - n_0].
             \end{equation*}
             \pause
-            \column{0.48\textwidth}
-            \textbf{ Example}\par
+            \column{0.58\textwidth}
+            \noindent\textbf{ Example}\par
             Accumulator:
             \begin{equation*}
                 y[n] = \sum_{k=-\infty}^{n}x[k]
             \end{equation*}
-            \textbf{ Example}\par
+            Time invariant. If you delay the input, the output also will be equivalently delayed.\\
+            \noindent\textbf{ Example}\par
             Modulator:
             \begin{equation*}
-                y(t) = \sin(t)x(t)
+                y(t) = (\sin t)x(t)
             \end{equation*}
+            \pause
+            \begin{equation*}
+                x(t) \rightarrow y(t), \quad x(t) \rightarrow (\sin t)x(t).
+            \end{equation*}            
+            \begin{equation*}
+                x(t - t_0) \rightarrow (\sin t)x(t - t_0) \neq y(t - t_0) \rightarrow [\sin (t - t_0)]x(t - t_0).
+            \end{equation*}                                    
         \end{columns}
     }
 \end{frame}
@@ -254,7 +282,18 @@
     {
         \begin{columns}
             \column{0.48\textwidth}
+            \noindent\textbf{Linear}\par
+            \begin{equation*}
+                y(t) = \int_{-\infty}^{t}x(\tau)d\tau.
+            \end{equation*}            
             \column{0.48\textwidth}
+            \noindent\textbf{Non-Linear}\par   
+            \begin{equation*}
+                y[n] = 2x[n] + 3.
+            \end{equation*}
+            \begin{equation*}
+                y(t) = x^2(t).
+            \end{equation*}                                    
         \end{columns}
     }
 \end{frame}
@@ -269,6 +308,7 @@
         \item In this lecture we develop in detail the representation of both continuous-time and discrete-time signals as a linear combination of delayed impulses and the consequences for representing linear, time-invariant systems.
         \item The resulting representation is referred to as convolution.
     \end{enumerate}
+    
 \end{frame}
 
 
@@ -279,23 +319,23 @@
         \item A linear system: the response to a linear combination of inputs is the same linear combination of the individual responses.
         \item Time invariance: the system is not sensitive to the time origin. If the input is shifted in time by some amount, then the output is simply shifted by the same amount.
         \item For a linear system, if the system inputs can be decomposed as a linear combination of some basic inputs and the system response is known for each of the basic inputs, then the response can be constructed as the same linear combination of the responses to each of the basic inputs.
-        \item Signals can be decomposed as a linear combination of basic signals in a variety of ways (e.g., Taylor series expansion that expresses a function in polynomial form.) However, in the context of signals and systems, it is important to choose the basic signals in the expansion so that in some sense the response is easy to compute.
-        \item For systems that are both linear and time-invariant, there are two particularly useful choices for these basic signals: delayed impulses and complex exponentials.
+        \item Signals can be decomposed as a linear combination of basic signals in a variety of ways (e.g., Taylor series expansion that expresses a function in polynomial form.) However, in the context of signals and systems, it is important to choose the basic signals in the expansion so that, in some sense, the response is easy to compute.
+        \item For systems that are both linear and time-invariant, there are two particularly useful choices for these basic signals: \alert{delayed impulses} and \alert{complex exponentials}.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Introduction (from Oppenheim)}
     \begin{itemize}
-        \item In this lecture we develop in detail the representation of both continuous-time and discrete-time signals as a linear combination of delayed impulses and the consequences for representing linear, time-invariant systems. The resulting representation is referred to as convolution.
+        \item In this lecture we develop in detail the representation of both continuous-time and discrete-time signals as a linear combination of delayed impulses and the consequences for representing linear, time-invariant systems. The resulting representation is referred to as \alert{convolution}.
         \item Earlier, we developed in detail the decomposition of signals as linear combinations of complex exponentials (referred to as Fourier analysis) and the consequence of that representation for linear, time-invariant systems.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Introduction}
     \begin{itemize}
-        \item Using the convolution we can express the response of an LTI system to an arbitrary input in terms of the system's response to the unit impulse.
+        \item Using the convolution we can express the response of an LTI system to an arbitrary input in terms of the system's response to the \alert{unit impulse}.
         \item An LTI system is completely characterized by its response to a single signal, namely, its response to the unit impulse.
-        \item In discrete time, we have the convolution sum. In continuous time, we have the convolution integral.
+        \item In discrete time, we have the \alert{convolution sum}. In continuous time, we have the \alert{convolution integral}.
     \end{itemize}
 \end{frame}
 
@@ -308,8 +348,8 @@
     \end{itemize}
 
     \begin{enumerate}
-        \item Delayed impulses $\rightarrow$ convolution
-        \item Complex exponentials $\rightarrow$ Fourier analysis
+        \item Delayed impulses $\rightarrow$ convolution.
+        \item Complex exponentials $\rightarrow$ Fourier analysis.
     \end{enumerate}
     }
 \end{frame}
@@ -321,7 +361,7 @@
 \begin{frame}{A DT Signal as  Superposition of Weighted Delayed Impulses}
     \begin{itemize}
       \item We can express a DT signal as a linear combination of weighted delayed impulses.
-      \item If we have a liner system, and a signal expressed as above as a linear combination of basic signals, the response would be the same linear combinaton fo the responses for individual basic signals.
+      \item If we have a liner system, and a signal expressed as above as a linear combination of basic signals, the response would be the same linear combination  the responses for individual basic signals.
     \end{itemize}
 
 \end{frame}
@@ -391,7 +431,7 @@
     \end{equation}
     which we represent symbolically as
     \begin{equation}\label{eq:convolution_symbol}
-        y[n] = x[n]\ast h[n]
+        y[n] = x[n]\ast h[n].
     \end{equation}
 \end{frame}
 
@@ -1089,7 +1129,7 @@ Convolution distributes over addition.\par
             \end{equation*}
         \item The impulse response of a causal LTI system must be zero before the impulse occurs, which is consistent with the intuitive concept of causality.
         \item More generally, causality for a linear system is equivalent to the condition of initial rest; i.e., if the input to a causal system is 0 up to some point in time, then the output must also be 0 up to that time.
-        \item The equivalence of causality and the condition of initial rest applies only to linear systems.
+        \item The equivalence of causality and the condition of \alert{initial rest} applies only to linear systems.
     \end{enumerate}
 \end{frame}
 
@@ -1112,7 +1152,7 @@ Convolution distributes over addition.\par
         \end{equation*}
     and as
     \begin{equation*}
-        y[n] = h[n]\ast x[n] = \sum_{k=-\infty}^{\infty}h[k]x[n-k].
+        y[n] = h[n]\ast x[n] = \sum_{k=0}^{\infty}h[k]x[n-k].
     \end{equation*}
     \begin{equation*}
         y[n] = \sum_{k=0}^{\infty}h[k]x[n-k].
@@ -1159,20 +1199,20 @@ A system is stable if every bounded input produces a bounded output. Consider an
                 \sum_{n=-\infty}^{\infty}|h[n]| = \sum_{n=-\infty}^{\infty}|\delta[n-n_0]| = 1
             \end{equation*}
             \pause
-            Ans:\textcolor{YellowGreen}{stable.}\par
+            Ans:\textcolor{EntcSlate}{stable.}\par
             \pause
             Pure time shift in CT:\par
             \begin{equation*}
                 \int_{-\infty}^{\infty}|h(\tau)|d\tau = \int_{-\infty}^{\infty}|\delta(\tau- t_0)|d\tau = 1
             \end{equation*}
             \pause
-            Ans: \textcolor{YellowGreen}{stable.}\par
+            Ans: \textcolor{EntcSlate}{stable.}\par
             Accumulator in DT: $h[n] = u[n]$\par
             \begin{equation*}
                 \sum_{n=-\infty}^{\infty}|u[n]| = \sum_{n=0}^{\infty}|u[n]| = \infty
             \end{equation*}
             \pause
-            Ans: \textcolor{Tomato}{unstable.}
+            Ans: \textcolor{DarkRed}{unstable.}
             \pause
             \column{0.5\textwidth}
 
@@ -1188,7 +1228,7 @@ A system is stable if every bounded input produces a bounded output. Consider an
                 \int_{-\infty}^{\infty}|u(\tau)|d\tau = \int_{0}^{\infty}d\tau = \infty
             \end{equation*}
             \pause
-            Ans: \textcolor{Tomato}{unstable.}
+            Ans: \textcolor{DarkRed}{unstable.}
         \end{columns}
     }
 \end{frame}
@@ -1338,7 +1378,7 @@ u[n]$ or $x(t) = u(t)$.
         \vspace{.5in}
     }
     \pause
-    $\Leftarrow$:Why does $h(t) = 0, \quad  t <0$ ($h[n] = 0, \quad  n <0$, imply the system is causal?\pause~Ans:
+    $\Leftarrow$:Why does $h(t) = 0, \:  t <0$ ($h[n] = 0, \:  n <0$), imply the system is causal?\pause~Ans:
     \mode<beamer>
     {
     \begin{equation*}

@@ -1,5 +1,5 @@
 \tikzset{%
-  block/.style    = {draw, rectangle, minimum height = 2em, minimum width = 4em, fill=red!20},
+  block/.style    = {draw, rectangle, rounded corners=2pt, thin, minimum height = 2em, minimum width = 4em, fill=blue!10!white},
   sum/.style      = {draw, circle, node distance = 2cm}, % Adder
   io/.style    = {coordinate}, %input-output
     junction/.style    = {coordinate}
@@ -9,7 +9,7 @@
 \newcommand{\inte}{$\displaystyle \int$}
 \newcommand{\derv}{\huge$\frac{d}{dt}$}
 
-\begin{tikzpicture}[auto, node distance =2cm, >=triangle 45, scale=0.8]
+\begin{tikzpicture}[auto, node distance =2cm, scale=0.8]
 
 	\begin{scope}
 		\node (input) at (0,0) [io] {};
@@ -17,15 +17,15 @@
 		\node (b2) [right of=b1, block] {};
 		\node (output) [right of=b2, io] {};
 		
-		\draw[->](input) --  (b1);
-		\draw[->](b1) --  (b2);
-		\draw[->](b1) --  (b2); 	
-		\draw[->](b2) --  (output);
+		\draw[-latex](input) --  (b1);
+		\draw[-latex](b1) --  (b2);
+		\draw[-latex](b1) --  (b2); 	
+		\draw[-latex](b2) --  (output);
 		
 		\node at (4, -1.1) {Series (Cascade)};		
 	\end{scope}	
 	
-	\begin{scope}[yshift=-3.5cm]
+	\begin{scope}[yshift=-3.3cm]
 		\node (input) at (0,0) [io] {};
 		\node (j1) [right of=input, xshift=-1cm, junction] {};	
 		\node (b1) [above of=j1, xshift=2cm, yshift=-1.25cm, block] {};
@@ -35,11 +35,11 @@
 		
 		
 		\draw[] (input) --  (j1);		
-		\draw[->] (j1) |-  (b1);	
-		\draw[->] (j1) |-  (b2);	
-		\draw[->] (b1) -|  (s1);	
-		\draw[->] (b2) -|  (s1);
-		\draw[->] (s1) --  (output);		
+		\draw[-latex] (j1) |-  (b1);	
+		\draw[-latex] (j1) |-  (b2);	
+		\draw[-latex] (b1) -|  (s1);	
+		\draw[-latex] (b2) -|  (s1);
+		\draw[-latex] (s1) --  (output);		
 		\node at (4, -1.75) {Parallel};			
 	\end{scope}
 	
@@ -54,13 +54,13 @@
 
 		
 		
-		\draw[->] (input) --  (s2);		
-		\draw[->] (s2) --  (b3);	
+		\draw[-latex] (input) --  (s2);		
+		\draw[-latex] (s2) --  (b3);	
 		\draw[] (b3) --  (j2);
 		
-		\draw[->] (j2) --  (output);	
-		\draw[->] (j2) |- (b4);		
-		\draw[->] (b4) -| (s2);
+		\draw[-latex] (j2) --  (output);	
+		\draw[-latex] (j2) |- (b4);		
+		\draw[-latex] (b4) -| (s2);
 		\node at (4, -2) {Feedback};			
 	\end{scope}	
 \end{tikzpicture} 

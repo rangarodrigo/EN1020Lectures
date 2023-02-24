@@ -20,12 +20,12 @@
 	every axis y label/.style={at={(ticklabel* cs:1.05)},    anchor=west},	
 	clip=false,
 ]
-	\addplot [dashed, blue] coordinates {(-3,0) (0,0) (0,1) (1,1) (1,0) (4,0)};
-	\addplot [thick, red!60!black, domain=-3:0]  {0};
-	\addplot [thick, red!60!black, domain=0:1]  {0.5*x*x};
-	\addplot [thick, red!60!black, domain=1:2]  {x - 0.5};
-	\addplot [thick, red!60!black, domain=2:3]  {-0.5*x*x + x +1.5};	
-	\addplot [thick, red!60!black, domain=3:4]  {0};	
+	\addplot [dashed, EntcBlue] coordinates {(-3,0) (0,0) (0,1) (1,1) (1,0) (4,0)};
+	\addplot [thick, EntcRed, domain=-3:0]  {0};
+	\addplot [thick, EntcRed, domain=0:1]  {0.5*x*x};
+	\addplot [thick, EntcRed, domain=1:2]  {x - 0.5};
+	\addplot [thick, EntcRed, domain=2:3]  {-0.5*x*x + x +1.5};	
+	\addplot [thick, EntcRed, domain=3:4]  {0};	
 \end{axis}
 
 \end{tikzpicture} 

@@ -18,7 +18,7 @@
 		every axis y label/.style={at={(ticklabel* cs:1.05)},    anchor=west},	
 		clip=false,
 	]
-	\addplot[red, very thick] coordinates {(0,0) (0,1) (1,1) (1,0)};
+	\addplot[EntcRed, very thick] coordinates {(0,0) (0,1) (1,1) (1,0)};
 	
 	\node at (axis cs:4, 0.5) [anchor=west] {$\delta(t) = \lim_{\Delta \rightarrow 0} \delta_\Delta(t)$};
 	
@@ -44,9 +44,9 @@
 		every axis y label/.style={at={(ticklabel* cs:1.05)},    anchor=west},	
 		clip=false,
 	]
-	\addplot[red, very thick] coordinates {(0,0) (1,1) (2,0)};
+	\addplot[EntcRed, very thick] coordinates {(0,0) (1,1) (2,0)};
 	
 	\node at (axis cs:4, 0.5) [anchor=west, text width=4cm] {$r_\Delta(t) = \delta_\Delta(t) \ast \delta_\Delta(t)$\\ $\delta(t) = \lim_{\Delta \rightarrow 0} r_\Delta(t)?$};
 	
 	\end{axis}	
-\end{tikzpicture}
+\end{tikzpicture} 

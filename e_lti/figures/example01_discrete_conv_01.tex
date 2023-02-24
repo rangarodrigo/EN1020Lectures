@@ -19,10 +19,10 @@
 			\edef\xn{\pgfmathresult}	
 			\ifthenelse{\xn > 0}
 			{
-				\draw[red, thick, fill=red]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
+				\draw[EntcRed, thick, fill=EntcRed]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
 			}
 			{
-				\draw[red, fill=red] (\n+ \nmin,  0) circle (1pt);
+				\draw[EntcRed, fill=EntcRed] (\n+ \nmin,  0) circle (1pt);
 			}
 		}
 	\end{scope}	
@@ -66,10 +66,10 @@
 			\edef\xn{\pgfmathresult}	
 			\ifthenelse{\xn > 0}
 			{
-				\draw[red, thick, fill=red]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
+				\draw[EntcRed, thick, fill=EntcRed]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
 			}
 			{
-				\draw[red, fill=red] (\n+ \nmin,  0) circle (1pt);
+				\draw[EntcRed, fill=EntcRed] (\n+ \nmin,  0) circle (1pt);
 			}
 		}
 	\end{scope}	
@@ -149,7 +149,7 @@
 		\def\x{{0, 0, 0, 1, 1, 2, 0, 0, 0}}	
 
 
-		\node at (\nmax,.5) [anchor=south, red] {\scriptsize $x[k]$};
+		\node at (\nmax,.5) [anchor=south, EntcRed] {\scriptsize $x[k]$};
 		
 		\foreach \n in {0,1, ...,8}
 		{
@@ -157,7 +157,7 @@
 			\edef\xn{\pgfmathresult}	
 			\ifthenelse{\xn > 0}
 			{
-				\draw[red, thick, fill=red, opacity=.4]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
+				\draw[EntcRed, thick, fill=EntcRed, opacity=.4]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
 			}
 			{
 
@@ -170,7 +170,7 @@
 		\def\x{{0, 0, 0, 1, 1, 2, 0, 0, 0}}	
 
 
-		\node at (\nmax,.5) [anchor=south, red] {\scriptsize $x[k]$};
+		\node at (\nmax,.5) [anchor=south, EntcRed] {\scriptsize $x[k]$};
 		
 		\foreach \n in {0,1, ...,8}
 		{
@@ -178,7 +178,7 @@
 			\edef\xn{\pgfmathresult}	
 			\ifthenelse{\xn > 0}
 			{
-				\draw[red, thick, fill=red, opacity=.4]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
+				\draw[EntcRed, thick, fill=EntcRed, opacity=.4]  (\n + \nmin, 0) -- ++(0, \xn) circle (1pt) node[anchor=east] {\scriptsize $\xn$};
 			}
 			{
 

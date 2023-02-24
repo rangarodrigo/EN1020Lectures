@@ -236,60 +236,60 @@
     \end{enumerate}
     Determine a closed-form expression for \xt.
 
-    % Q15 Oppenheim et al. 4.15
-    \item  Let \xt~be a signal with \ft~\xo. Suppose we are given the following facts:
-    \begin{enumerate}
-        \item \xt~is real.
-        \item $x(t)=0$ for $t\leq 0$.
-        \item $\frac{1}{2\pi}\int_{-\infty}^{\infty}\mathfrak{Re} \{ X(j\omega)\}e^{j\omega t}d\omega = |t|e^{-|t|}$.
-    \end{enumerate}
-    Determine a closed-form expression for \xt.
+%    % Q15 Oppenheim et al. 4.15
+%    \item  Let \xt~be a signal with \ft~\xo. Suppose we are given the following facts:
+%    \begin{enumerate}
+%        \item \xt~is real.
+%        \item $x(t)=0$ for $t\leq 0$.
+%        \item $\frac{1}{2\pi}\int_{-\infty}^{\infty}\mathfrak{Re} \{ X(j\omega)\}e^{j\omega t}d\omega = |t|e^{-|t|}$.
+%    \end{enumerate}
+%    Determine a closed-form expression for \xt.
+%
+%    % Q16 Oppenheim et al. 4.16
+%    \item Consider the signal
+%    \begin{equation*}
+%        x(t) = \sum_{-\infty}^{\infty}\frac{\sin\left(k\frac{\pi}{4}\right)}{k\frac{\pi}{4}}\delta\left(t - k\frac{\pi}{4}\right).
+%    \end{equation*}
+%    \begin{enumerate}
+%        \item Determine $g(t)$ such that
+%        \begin{equation*}
+%            x(t) = \left(\frac{\sin t}{\pi t}\right)g(t).
+%        \end{equation*}
+%        \item Use the multiplication property of the \ft~ to argue that \xo~is periodic. Specify \xo~over one period.
+%    \end{enumerate}
 
-    % Q16 Oppenheim et al. 4.16
-    \item Consider the signal
-    \begin{equation*}
-        x(t) = \sum_{-\infty}^{\infty}\frac{\sin\left(k\frac{\pi}{4}\right)}{k\frac{\pi}{4}}\delta\left(t - k\frac{\pi}{4}\right).
-    \end{equation*}
-    \begin{enumerate}
-        \item Determine $g(t)$ such that
-        \begin{equation*}
-            x(t) = \left(\frac{\sin t}{\pi t}\right)g(t).
-        \end{equation*}
-        \item Use the multiplication property of the \ft~ to argue that \xo~is periodic. Specify \xo~over one period.
-    \end{enumerate}
-
-    % Q19 Oppenheim et al. 4.37
-   \item \label{qu:437} Consider the signal \xt~in Figure \ref{fi:q437}.
-   \begin{enumerate}
-        \item Find the \ft~\xo~of \xt.
-        \item Sketch the signal
-        \begin{equation*}
-          \tilde{x}(t) = x(t)\ast \sum_{k = -\infty}^{\infty}\delta(t-4k).
-        \end{equation*}
-        \item Find another signal $g(t)$ such that $g(t)$ is not the same as \xt~and
-        \begin{equation*}
-          \tilde{x}(t) = g(t)\ast \sum_{k = -\infty}^{\infty}\delta(t-4k).
-        \end{equation*}
-        \item Argue that, although $G(j\omega)$ is different from \xo,   $G(j\frac{\pi k}{2}) = X(j\frac{\pi k}{2})$   for all integers $k$. You should explicitly evaluate  $G(j\omega)$ to answer this question.
-   \end{enumerate}
-    \begin{figure}
-      \centering
-      \input{q437}
-      \caption{Figure for Q\ref{qu:437}}\label{fi:q437}
-    \end{figure}
-
-    % Q20 Oppenheim et al. 4.38
-    \item Let \xt~be any signal with \ft~\xo. The frequency-shift property of the
-    ft~may be stated as
-    \begin{equation*}
-        e^{j\omega_0 t} \overset{\mathcal{F}}{\longleftrightarrow}  X(j(\omega - \omega_0)).
-    \end{equation*}
-    \begin{enumerate}
-        \item Prove the frequency-shift property by applying the frequency shift to the analysis equation
-        \begin{equation*}
-            X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt.
-        \end{equation*}
-        \item Prove the frequency-shift property by utilizing the \ft~of $e^{j\omega_0 t}$ in conjunction with the multiplication property of the \ft.
-    \end{enumerate}
+%    % Q19 Oppenheim et al. 4.37
+%   \item \label{qu:437} Consider the signal \xt~in Figure \ref{fi:q437}.
+%   \begin{enumerate}
+%        \item Find the \ft~\xo~of \xt.
+%        \item Sketch the signal
+%        \begin{equation*}
+%          \tilde{x}(t) = x(t)\ast \sum_{k = -\infty}^{\infty}\delta(t-4k).
+%        \end{equation*}
+%        \item Find another signal $g(t)$ such that $g(t)$ is not the same as \xt~and
+%        \begin{equation*}
+%          \tilde{x}(t) = g(t)\ast \sum_{k = -\infty}^{\infty}\delta(t-4k).
+%        \end{equation*}
+%        \item Argue that, although $G(j\omega)$ is different from \xo,   $G(j\frac{\pi k}{2}) = X(j\frac{\pi k}{2})$   for all integers $k$. You should explicitly evaluate  $G(j\omega)$ to answer this question.
+%   \end{enumerate}
+%    \begin{figure}
+%      \centering
+%      \input{q437}
+%      \caption{Figure for Q\ref{qu:437}}\label{fi:q437}
+%    \end{figure}
+%
+%    % Q20 Oppenheim et al. 4.38
+%    \item Let \xt~be any signal with \ft~\xo. The frequency-shift property of the
+%    ft~may be stated as
+%    \begin{equation*}
+%        e^{j\omega_0 t} \overset{\mathcal{F}}{\longleftrightarrow}  X(j(\omega - \omega_0)).
+%    \end{equation*}
+%    \begin{enumerate}
+%        \item Prove the frequency-shift property by applying the frequency shift to the analysis equation
+%        \begin{equation*}
+%            X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt.
+%        \end{equation*}
+%        \item Prove the frequency-shift property by utilizing the \ft~of $e^{j\omega_0 t}$ in conjunction with the multiplication property of the \ft.
+%    \end{enumerate}
 \end{enumerate}
 \end{document} 
