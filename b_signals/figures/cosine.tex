@@ -25,12 +25,15 @@
                                 node[right,pos=1,font=\footnotesize, black]{\scriptsize $x(t)=1\cos (t - \pi/6)$};
 
 
-       \draw[|-|] (axis cs: pi/4,1.1) -- (axis cs: 2*pi +pi/4,1.1) node[midway, above] {\scriptsize $T_0=\frac{2\pi}{\omega_0}$};
+
        \node at (axis cs:0, .8667) [anchor=east] {\scriptsize $A\cos\phi$  };
 
        \node at (axis cs:2.5*pi, 1.2) [anchor=west] {\scriptsize $A =$ amplitude };
        \node at (axis cs:2.5*pi, 1.0) [anchor=west] {\scriptsize $\omega_0 =$ frequency (here $\omega_0 =1$) };
        \node at (axis cs:2.5*pi, 0.8) [anchor=west] {\scriptsize $\phi =$ phase (here $\phi =-\pi/6$) };
+       \draw[|-|] (axis cs: pi/6,1.1) -- (axis cs: 2*pi +pi/6,1.1) node[midway, above] {\scriptsize $T_0=\frac{2\pi}{\omega_0}$};
+       \draw[dashed] (axis cs:0.167*pi, 1.0) -- (axis cs:0.167*pi, -0.5) node [anchor=north, EntcBlue] {\scriptsize $\frac{\pi}{6}$ };
+       \draw[dashed] (axis cs:2.167*pi, 1.0) -- (axis cs:2.167*pi, -0.5) node [anchor=north, EntcBlue] {\scriptsize $2\pi + \frac{\pi}{6}$ };
     \end{axis}
 
 
