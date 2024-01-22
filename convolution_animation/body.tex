@@ -1,0 +1,46 @@
+\begin{frame}{Convolution Integral and Sum}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            The convolution of the signal $x(t)$ and $h(t)$ is given by
+            \begin{equation*}
+                \boxed{y(t) = \int_{-\infty}^{\infty} x(\tau)h(t - \tau)d\tau,}
+            \end{equation*}
+            which is referred to as the \alert{convolution integral} or the \alert{superposition integral}. This  corresponds to the representation of a continuous-time LTI system in terms of its response to a unit impulse.
+            \begin{equation*}
+                y(t) = x(t) \ast h(t).
+            \end{equation*}                   
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            The convolution of the sequence $x[n]$ and $h[n]$ is given by
+            \begin{equation}\label{eq:convolution_sum}
+                \boxed{y[n] = \sum_{k=-\infty}^{\infty}x[k]h[n-k],}
+            \end{equation}
+            which is referred to as the \alert{convolution sum} or \alert{superposition sum}. This corresponds to the representation of a discrete-time LTI system in terms of its response to a unit impulse (sample), which we represent symbolically as
+            \begin{equation}\label{eq:convolution_symbol}
+                y[n] = x[n]\ast h[n].
+            \end{equation}          
+        \end{column}               
+    \end{columns}
+    \vspace*{1cm}
+    \noindent The characteristics of an LTI system are completely determined  by its impulse response.      
+\end{frame}
+
+\begin{frame}{Examples for the Animation}
+    \begin{enumerate}
+        \item $y(t) = x(t) \ast \delta(t)$
+        \item $y(t) = x(t) \ast \delta(t - 2)$
+        \item $y(t) = x(t) \ast [\delta(t) + \delta(t - 2)]$
+        \item $y(t) = x(t) \ast [u(t) - u(t-1)]$
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 4}
+    \begin{enumerate}
+        \item $y(t) = x(t) \ast \delta(t)$
+        \item $y(t) = x(t) \ast \delta(t - 2)$
+        \item $y(t) = x(t) \ast [\delta(t) + \delta(t - 2)]$
+        \item $y(t) = x(t) \ast [u(t) - u(t-1)]$
+    \end{enumerate}
+
+    \input{convolution_animation/ct_conv_example.tex}
+\end{frame}
