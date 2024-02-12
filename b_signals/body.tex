@@ -706,9 +706,9 @@
                 \begin{align*}
                     x(t) &= tu(t)\\
                     E_\infty &=  \lim_{T\rightarrow \infty}\int_{-T}^{T}|x(t)|^2dt\\
-                    &= \lim_{T\rightarrow \infty}\int_{0}^{T} tdt
-                    = \lim_{T\rightarrow \infty} \left[\frac{t^2}{2}\right]_0^T\\
-                    &= \lim_{T\rightarrow \infty}\frac{T^2}{2} \rightarrow \infty.
+                    &= \lim_{T\rightarrow \infty}\int_{0}^{T} |t|^2dt
+                    = \lim_{T\rightarrow \infty} \left[\frac{t^3}{3}\right]_0^T\\
+                    &= \lim_{T\rightarrow \infty}\frac{T^3}{3} \rightarrow \infty.
                 \end{align*}
                 This is not an energy signal.
             \end{overprint}
@@ -730,7 +730,7 @@
                 \begin{align*}
                     x(t) &= tu(t)\\
                     P_\infty &=  \lim_{T\rightarrow \infty}\frac{1}{2T}\int_{-T}^{T}|x(t)|^2dt\\
-                    &= \lim_{T\rightarrow \infty}\frac{1}{2T}\frac{T^2}{2}\\
+                    &= \lim_{T\rightarrow \infty}\frac{1}{2T}\frac{T^3}{3}\\
                     &= \lim_{T\rightarrow \infty}\frac{T}{4} \rightarrow \infty.
                 \end{align*}
                 This is not a power signal either.
