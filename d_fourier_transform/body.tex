@@ -12,7 +12,7 @@
             \item Discrete-time Fourier series
             \item Discrete-time Fourier transform
         \end{enumerate}
-      \item In this part of the course, we will concentrate on how to actually compute continuous-time Fourier series and transform. Later, after we study liner, time-invariant (LTI) systems, we will study the conceptual aspects of Fourier techniques.
+      \item In this part of the course, we will concentrate on how to compute continuous-time Fourier series and transform. Later, after we study liner, time-invariant (LTI) systems, we will study the conceptual aspects of Fourier techniques.
       \item In EN2063, we will do a more rigorous study of Fourier techniques.
     \end{itemize}
 \end{frame}
@@ -38,7 +38,7 @@
                 0, & T_1 < |t| < T/2,
             \end{cases}
         \end{equation*}
-        This signal is periodically repeats with fundamental period $T$ and fundamental frequency $\omega_0 = 2\pi/T$.
+        This signal periodically repeats with the fundamental period $T$ and the fundamental frequency $\omega_0 = 2\pi/T$.
     \mode<beamer>
     {
         \begin{figure}
@@ -54,11 +54,11 @@
 \begin{frame}
     The Fourier series coefficients $a_k$ of this wave are
     \begin{equation}\label{eq:square_fs}
-        a_k = \frac{2\sin(k\omega_0T_1)}{k\omega_0T}
+        a_k = \frac{2\sin(k\omega_0T_1)}{k\omega_0T}.
     \end{equation}
     We plotted this for a fixed value of $T_1$ and several values of $T$ (shown in the next slide). An alternative way of interpreting Eq. \ref{eq:square_fs} is as samples of an envelope function:
     \begin{equation*}
-        Ta_k = \left.\frac{2\sin(\omega T_1)}{\omega}\right|_{\omega=k\omega_0}
+        Ta_k = \left.\frac{2\sin(\omega T_1)}{\omega}\right|_{\omega=k\omega_0}.
     \end{equation*}
     \pause
     With $\omega$ thought of as a continuous variable, the function $\frac{2\sin(\omega T_1)}{\omega}$ represents the envelope of $Ta_k$, and the coefficients $a_k$ are simple equally spaced samples of this envelope.
@@ -81,7 +81,7 @@
         \column{0.2\textwidth}
         {
             \small
-            \noindent~Plots of scaled Fourier series coefficients $a_k$ for the periodic square wave with $T_1$ fixed and for several values of $T$: $T=4T_1$, $T=8T_1$, $T=16T_1$.
+            \noindent Plots of scaled Fourier series coefficients $a_k$ for the periodic square wave with $T_1$ fixed and for several values of $T$: $T=4T_1$, $T=8T_1$, $T=16T_1$.
 
         }
     \end{columns}
@@ -101,14 +101,14 @@
         \column{0.2\textwidth}
         {
             \small
-            \noindent~The Fourier series coefficients and their envelope for periodic square wave for several values of $T$ (with $T_1$ fixed): $T=4T_1$, $T=8T_1$, $T=16T_1$. The coefficients are regularly-spaced samples of the envelope $(2\sin \omega T_1)/\omega$, where the spacing between samples, $2\pi/T$, decreases as $T$ increases.
+            \noindent The Fourier series coefficients and their envelope for periodic square wave for several values of $T$ (with $T_1$ fixed): $T=4T_1$, $T=8T_1$, $T=16T_1$. The coefficients are regularly-spaced samples of the envelope $(2\sin \omega T_1)/\omega$, where the spacing between samples, $2\pi/T$, decreases as $T$ increases.
         }
     \end{columns}
 \end{frame}
 
 
 \begin{frame}
-    As $T$ increases, or equivalently, as the fundamental frequency $\omega_0 = 2\pi/T$ decreases, the envelope is sampled with a close and closer spacing. As $T$ becomes arbitrarily large, the original periodic square waveform approaches the rectangular pulse. Also, the Fourier series coefficients, multiplied by $T$, become more and more closely spaced sampled of the envelope. So, in some sense, the set of Fourier series coefficients  approaches the envelope function as $T\rightarrow \infty$.
+    As $T$ increases, or equivalently, as the fundamental frequency $\omega_0 = 2\pi/T$ decreases, the envelope is sampled with a close and closer spacing. As $T$ becomes arbitrarily large, the original periodic square waveform approaches the rectangular pulse. Also, the Fourier series coefficients, multiplied by $T$, become more and more closely spaced samples of the envelope. So, in some sense, the set of Fourier series coefficients  approaches the envelope function as $T\rightarrow \infty$.
 \end{frame}
 
 
@@ -284,7 +284,7 @@
             \column{0.5\textwidth}
                 \mode<beamer>
                 {
-                    \begin{figure}
+                    \begin{figure} 
                       \centering
                       \input{figures/eatut_signal}
                       \caption{$e^{-at}u(t), \quad a> 0$.}\label{fi:eatut_signal}
@@ -295,7 +295,7 @@
                     \begin{aligned}
                         X(j\omega) &= \int_{-\infty}^{\infty}x(t)e^{-j\omega t} dt.\\ \pause
                         X(j\omega) &= \int_{0}^{\infty} e^{-at}e^{-j\omega t}dt\\ \pause
-                        &= \frac{1}{a+j\omega}\left. e^{-(a+j\omega)t}\right|_{0}^{\infty}\\ \pause
+                        &= \frac{-1}{a+j\omega}\left. e^{-(a+j\omega)t}\right|_{0}^{\infty}\\ \pause
                         X(j\omega) &= \frac{1}{a+j\omega}, \quad a>0.
                     \end{aligned}
                 \end{equation*}
