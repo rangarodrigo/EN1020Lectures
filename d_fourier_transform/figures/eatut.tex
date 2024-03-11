@@ -19,7 +19,7 @@
 		%\addplot+[red, smooth, mark=none] table [x={n}, y={xn}] {periodic_square_fs_samples_of_envilope_gen.dat};
 		\addplot [red!70!black, thick, domain=-5:5, samples=200] plot{1/sqrt(x*x + 1))};
 		\node at (axis cs:-0.5, 1) [anchor=east] { $1/a$ };
-		\draw[dashed, EntcBlue] (axis cs:-1, 0) node[anchor=north] { $-a$} -- (axis cs:-1, 0.707) node[anchor=east] { $\sqrt{2} a/2$} --  (axis cs:1, 0.707)  --  (axis cs:1, 0) node[anchor=north] { $a$} ;
+		\draw[dashed, EntcBlue] (axis cs:-1, 0) node[anchor=north] { $-a$} -- (axis cs:-1, 0.707) node[anchor=east] { $\frac{1}{\sqrt{2}a}$} --  (axis cs:1, 0.707)  --  (axis cs:1, 0) node[anchor=north] { $a$} ;
     \end{axis}
 \end{scope}
 
