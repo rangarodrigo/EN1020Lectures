@@ -1,0 +1,32 @@
+\documentclass[a4paper,landscape]{article}
+
+\usepackage[
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=18mm   % safe for most printers
+]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+
+\fancypagestyle{mypdf}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \cfoot{\thepage}
+}
+
+% Raise footer relative to page bottom
+\setlength{\footskip}{12mm}
+
+\begin{document}
+\pagenumbering{arabic}
+
+\includepdf[
+  pages=-,
+  nup=2x2,
+  frame,
+  pagecommand={\thispagestyle{mypdf}}
+]{z.pdf}
+
+\end{document}

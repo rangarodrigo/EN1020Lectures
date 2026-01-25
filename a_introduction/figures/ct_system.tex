@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+[
+  block/.style    = {rectangle,draw=EntcMaroonDef,thick, fill=EntcBaigeDef, minimum height = 2em, minimum width = 4em, rounded corners=.8ex},
+  connector/.style = {draw=EntcMaroonDef,thick},
+]
+	\node (x) at (0,0) [anchor=east] {$x(t)$};
+	\node (s) [draw, right=of x, minimum height=1cm, minimum width = 2cm ,block] {System};
+	\node (y) [right=of s] {$y(t)$};	
+	\draw [-latex, connector] (x) -- (s);
+	\draw [-latex, connector] (s) -- (y);
+\end{tikzpicture} 

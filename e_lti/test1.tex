@@ -1,0 +1,74 @@
+\begin{frame}{}
+
+    {\bf Example}: Show that the complex exponential $e^{st}$, where $s$ is a complex variable\footnote{$s= \sigma + j\omega$}, is an eigenfunction of the LTI system with impulse response $h(t)$. Find en expression for the eigenvalue $H(s)$. Hence, show that $e^{j\omega t}$ is an eigenfunction of the LTI system with impulse response $h(t)$ and find the eigenvalue $H(j\omega)$.
+    % \tikz[draw=black] \draw (0,0) -- (\textwidth,0);
+
+    \pause
+    \mode<beamer>
+    {
+        \begin{columns}[t]
+            \begin{column}[t]{0.5\textwidth}
+                \begin{align*}
+                    y(t) &= h(t) * x(t) \\
+                    y(t) &= \int_{-\infty}^{\infty} h(\tau) x(t - \tau) d\tau \\
+                    y(t) &= \int_{-\infty}^{\infty} h(\tau) e^{s(t - \tau)} d\tau \\
+                \end{align*} 
+                Noting that $ e^{s(t - \tau)} = e^{st} e^{-s\tau}$ and $e^{st}$ is a constant with respect to $\tau$,           
+            \end{column}
+            \begin{column}[t]{0.5\textwidth}
+                \begin{align*}
+                    y(t) &= e^{st} \int_{-\infty}^{\infty} h(\tau) e^{-s\tau} d\tau \\
+                    y(t) &= e^{st} H(s)  \\
+                    H(s) &= \int_{-\infty}^{\infty} h(\tau) e^{-s\tau} d\tau
+                \end{align*} 
+                \pause
+                Substituting $s = j\omega$, we have $y(t) = e^{j\omega t} H(j\omega)$.
+                \begin{align*}
+                    H(j\omega) &= \int_{-\infty}^{\infty} h(\tau) e^{-j\omega\tau} d\tau \\
+                \end{align*}           
+            \end{column} 
+        \end{columns}
+    }
+\end{frame}
+
+\begin{frame}
+
+    {\bf Example}: Consider an LTI system for which the input and the output are related by 
+    \begin{equation*}
+        y(t) = x(t-3),
+    \end{equation*}
+    \begin{enumerate}
+        \item If the input is the exponential signal $x(t) = e^{j2t}$, find the output $y(t)$ and the eigenvalue $H(s)$.
+        \item Sate $h(t)$ and, hence, find $H(j\omega)$.
+    \end{enumerate}
+    
+
+    \pause
+    \mode<beamer>
+    {
+        \begin{columns}[t]
+            \begin{column}[t]{0.5\textwidth}
+                \begin{align*}
+                    y(t) &= x(t-3)\\
+                    &= e^{j2(t-3)} \\
+                    &= e^{j2t} e^{-j6}  = e^{-j6} x(t)\\
+                \end{align*} 
+                As $y(t) = H(s)e^{st}$, we have $H(s) = e^{-j6}$.\\   
+                \pause
+                \begin{equation*}
+                    h(t) = \delta(t-3)\; \text{by substituting } \delta(t) \text{ for } x(t).     
+                \end{equation*}                   
+            \end{column}
+            \pause
+            \begin{column}[t]{0.5\textwidth}   
+                \begin{align*}
+                    H(s) &= \int_{-\infty}^{\infty} h(\tau) e^{-s\tau} d\tau \\
+                    &= \int_{-\infty}^{\infty} \delta(\tau-3) e^{-s\tau} d\tau \\
+                    &= e^{-s3} \int_{-\infty}^{\infty} \delta(\tau) e^{-s\tau} d\tau \\
+                    &= e^{-s3} \\
+                \end{align*}
+                So, $H(j\omega) = e^{-j3\omega}$. Specifically, $H(j2t) = e^{-j6}$       
+            \end{column} 
+        \end{columns}
+    }
+\end{frame}
