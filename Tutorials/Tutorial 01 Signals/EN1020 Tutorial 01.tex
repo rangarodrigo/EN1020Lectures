@@ -15,10 +15,12 @@
 \usepackage{pgfplots}
 \usepackage{fourier}
 \usepackage[inline]{enumitem}
+\usepackage{multicol}
 
 
 
-\title{\Large Department of Electronic and Telecommunication Engineering\\University of Moratuwa\\Sri Lanka\\{\LARGE \bf \textsc{EN1020 Circuits, Signals, and Systems: Tutorial 01}}}
+
+\title{\Large Department of Electronic and Telecommunication Engineering\\University of Moratuwa\\Sri Lanka\\{\LARGE \bf \textsc{EN1020 Circuits, Signals, and Systems: Tutorial 01\footnote{Questions are from Oppenheim.}}}}
 
 \date{\vspace{-0.2in}\today}
 
@@ -34,7 +36,7 @@
 \noindent \tikz \draw (0,0) -- (\textwidth,0);
 
 \begin{enumerate}
-\item A continuous time signal is given in Figure 1. Sketch and label the following signals.\par
+\item A continuous time signal is given in Fig.~\ref{fig:to_transform}. Sketch and label the following signals.\par
 \begin{enumerate*}
     \item $x(t-2)$
     \item $x(t+1)$
@@ -43,12 +45,17 @@
     \item $x(t/3)$
 \end{enumerate*}
 
-
 \begin{figure}[h]
     \centering
         \input{fig01}
 \caption{}
+\label{fig:to_transform}
 \end{figure}
+
+\item In order to determine the effect of transforming the independent variable of a given signal \(x(t)\) to obtain a signal of the form \(x(\alpha t + \beta)\), where \(\alpha\) and \(\beta\) are given constants, the  systematic approach is to first delay or advance \(x(t)\) in accordance with the value of \(\beta\), and then to perform time scaling and/or time reversal on the resulting signal in accordance with the value of \(\alpha\). The delayed or advanced signal is linearly stretched if \(|\alpha| < 1\), linearly compressed if \(|\alpha| > 1\), and reversed in time if \(\alpha < 0\). Determine \(x(\frac{3}{2}t+1)\) for \(x(t)\) given in Fig.~\ref{fig:to_transform}.
+
+
+
 
 \item A discrete time signal is shown in Figure 2. Sketch and label each of the following signals.\par
 \begin{enumerate*}
@@ -66,6 +73,12 @@
 \caption{}
 \end{figure}
 
+\item Plot the magnitude of the signal
+\begin{equation*}
+    x(t) = e^{j2t} + e^{j3t}
+\end{equation*}
+by expressing it as a single sinusoid. 
+
 \item Find the even and odd parts of the $x(t)$ signal given in Figure \ref{fig03}.
 \begin{figure}[h]
     \centering
@@ -74,7 +87,7 @@
 \label{fig03}
 \end{figure}
 
-\item Using the discrete time signals $x_1[n]$ and $x_2[n]$ shown in Figure 4, represent each of the following signals by a graph.\par
+\item Using the discrete time signals $x_1[n]$ and $x_2[n]$ shown in Fig.~\ref{fig04}, represent each of the following signals by a graph.\par
 \begin{enumerate*}
     \item $y[n] = x_1[n]+ x_2[n]$
     \item $y[n] = 2x_1[n]$
@@ -110,6 +123,8 @@
 \end{enumerate}
 
 
+
+
 \item Determine whether or not each of the following signals are periodic. If periodic, find the fundamental period.
 \begin{enumerate}
     \item $x(t) =2e^{j(t+\pi/4)}$
@@ -128,8 +143,202 @@
         \item $x[n] = 3e^{j3n}$
     \end{enumerate*}
 
+\item Determine the fundamental period of 
+\begin{equation*}
+    x[n] = e^{j(2\pi/3)n} + e^{j(3\pi/4)n}.
+\end{equation*}
+
+\item \label{qu:ct_prop} In regard to general properties of systems, a system may or may not be:
+\begin{enumerate}
+    \item Memoryless
+    \item Time invariant
+    \item Linear
+    \item Causal
+    \item Stable
+\end{enumerate}
+For each of the following continuous-time systems, determine which of these properties hold and which do not. Justify your answers in each case. In each example, \(y(t)\)
+denotes the system output and \(x(t)\) denotes the system input.
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \( y(t) = x(t - 2) + x(2 - t) \)
+
+    \item \( y(t) = [\cos(3t)]\,x(t) \)
+
+    \item 
+    \[
+    y(t) = \int_{0}^{2t} x(\tau)\, d\tau
+    \]
+
+    \item
+    \[
+    y(t) =
+    \begin{cases}
+    0, & t < 0 \\
+    x(t) + x(t - 2), & t \ge 0
+    \end{cases}
+    \]
+
+    \item
+    \[
+    y(t) =
+    \begin{cases}
+    0, & x(t) < 0 \\
+    x(t) + x(t - 2), & x(t) \ge 0
+    \end{cases}
+    \]
+
+    \item \( y(t) = x(t/3) \)
+
+    \item \( y(t) = \dfrac{d}{dt}x(t) \)
+\end{enumerate}
+\end{multicols}
+
+\item Determine which of the properties listed in Problem~\ref{qu:ct_prop} hold and which do not hold for each of the following discrete-time systems. Justify your answers.
+In each example, \(y[n]\) denotes the system output and \(x[n]\) is the system input.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \( y[n] = x[-n] \)
+
+\item \( y[n] = x[n - 2] - 2x[n - 8] \)
+
+\item \( y[n] = n\,x[n] \)
+
+\item \( y[n] = \mathfrak{Ev}\{x[n - 1] \}\)
+
+\item
+\[
+y[n] =
+\begin{cases}
+x[n], & n \ge 1 \\
+0, & n = 0 \\
+x[n + 1], & n \le -1
+\end{cases}
+\]
+
+\item
+\[s
+y[n] =
+\begin{cases}
+x[n], & n \ge 1 \\
+0, & n = 0 \\
+x[n], & n \le -1
+\end{cases}
+\]
+
+\item \( y[n] = x[4n + 1] \)
+\end{enumerate}
+\end{multicols}
+
+\item Determine if each of the following systems is invertible. If it is, construct the
+inverse system. If it is not, find two input signals to the system that have the same
+output.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item \( y(t) = x(t - 4) \)
+
+\item \( y(t) = \cos[x(t)] \)
+
+\item \( y[n] = n\,x[n] \)
+
+\item 
+\[
+y(t) = \int_{-\infty}^{t} x(\tau)\, d\tau
+\]
+
+\item
+\[
+y[n] =
+\begin{cases}
+x[n - 1], & n \ge 1 \\
+0, & n = 0 \\
+x[n], & n \le -1
+\end{cases}
+\]
+
+\item \( y[n] = x[n]\,x[n - 1] \)
+
+\item \( y[n] = x[1 - n] \)
+
+\item
+\[
+y(t) = \int_{-\infty}^{t} e^{-(t - \tau)} x(\tau)\, d\tau
+\]
+
+\item
+\[
+y[n] = \sum_{k=-\infty}^{n} \left(\tfrac{1}{2}\right)^{n-k} x[k]
+\]
+
+\item
+\[
+y(t) = \frac{d}{dt}x(t)
+\]
+
+\item
+\[
+y[n] =
+\begin{cases}
+x[n + 1], & n \ge 0 \\
+x[n], & n \le -1
+\end{cases}
+\]
+
+\item \( y(t) = x(2t) \)
+
+\item \( y[n] = x[2n] \)
+
+\item
+\[
+y[n] =
+\begin{cases}
+x[n/2], & n \text{ even} \\
+0, & n \text{ odd}
+\end{cases}
+\]
+
+\end{enumerate}
+\end{multicols}
+
+\item Determine the values of \(P_\infty\) and \(E_\infty\) for each of the following signals:
+
+\begin{enumerate}
+\item \( x_1(t) = e^{-2t} u(t) \)
+
+\item \( x_2(t) = e^{j(2t + \pi/4)} \)
+
+\item \( x_3(t) = \cos(t) \)
+
+\item \( x_1[n] = \left(\tfrac{1}{2}\right)^n u[n] \)
+
+\item \( x_2[n] = e^{j(\pi n/2 + \pi/8)} \)
+
+\item \( x_3[n] = \cos\!\left(\tfrac{\pi}{4} n\right) \)
+\end{enumerate}
 
 
+\item Let $x(t)$ be the continuous-time complex exponential signal
+\[
+x(t) = e^{j\omega_0 t}
+\]
+with fundamental frequency $\omega_0$ and fundamental period $T_0 = 2\pi / \omega_0$. Consider the discrete-time signal obtained by taking equally spaced samples of $x(t)$—that is,
+\[
+x[n] = x(nT) = e^{j\omega_0 nT}.
+\]
+
+\begin{enumerate}
+\item Show that $x[n]$ is periodic if and only if $T/T_0$ is a rational number—that is, if and only if some multiple of the sampling interval \textit{exactly equals} a multiple of the period of $x(t)$.
+
+\item Suppose that $x[n]$ is periodic—that is, that
+\begin{equation}
+\frac{T}{T_0} = \frac{p}{q}, \label{eq:361}
+\end{equation}
+where $p$ and $q$ are integers. What are the fundamental period and fundamental frequency of $x[n]$? Express the fundamental frequency as a fraction of $\omega_0 T$.
+
+\item Again assuming that $T/T_0$ satisfies Eq.~\ref{eq:361}, determine precisely how many periods of $x(t)$ are needed to obtain the samples that form a single period of $x[n]$.
+\end{enumerate}
 \end{enumerate}
 
 
